@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Easy Blog - Posts</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <title>Blog</title>
 </head>
 <body>
 
-<h1>All Blog Posts</h1>
+<div id="post"></div>
 
-<ul id="post-list"></ul>
+<script type="module">
+  import { db, doc, getDoc } from "./firebase.js";
 
-<script src="assets/script.js"></script>
+  // Get blog id from URL
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  async function loadBlog() {
+    const blogRef = doc(db, "blogs", id);
+    const blogSnap = await getDoc(blogRef);
+    
+    if (blogSnap.exists()) {
+      const data = blogSnap.data();
+
+      document.getElementById("post").innerHTML = `
+        <h1>${data.title}</h1>
+        <p><b>By ${data.author}</b></p>
+        <p>${data.content}</p>
+      `;
+    } else {
+      document.getElementById("post").innerHTML = "Blog not found.";
+    }
+  }
+
+  loadBlog();
+</script>
 
 </body>
 </html>
