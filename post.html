@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Easy Blog - Post</title>
+  <title>Blog</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-  <div id="post-container"></div>
+<div class="container">
+  <div id="post"></div>
+  <a class="btn" href="blog.html">Back to Blogs</a>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const file = params.get("file");
+<script type="module">
+  import { db, doc, getDoc } from "./firebase.js";
 
-    fetch(file)
-      .then(res => res.text())
-      .then(md => {
-        document.getElementById("post-container").innerHTML = marked.parse(md);
-      });
-  </script>
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  async function loadPost() {
+    const ref = doc(db, "blogs", id);
+    const snap = await getDoc(ref);
+
+    if (snap.exists()) {
+      const data = snap.data();
+
+      document.getElementById("post").innerHTML = `
+        <h1>${data.title}</h1>
+        <p><b>${data.author}</b></p><br>
+        <p>${data.content}</p>
+      `;
+    } else {
+      document.getElementById("post").innerHTML = "<h2>Blog not found.</h2>";
+    }
+  }
+
+  loadPost();
+</script>
 
 </body>
 </html>
