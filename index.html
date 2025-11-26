@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Easy Blog</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <title>Submit Blog</title>
 </head>
 <body>
 
-  <h1>Easy Blog</h1>
-  <p>Welcome! Read blogs or submit your own.</p>
+<h1>Write a Blog</h1>
 
-  <a href="blog.html" class="btn">View Blogs</a>
-  <a href="#submit" class="btn">Write a Blog</a>
+<label>Title</label>
+<input type="text" id="title" />
 
-  <h2 id="submit">Write a Blog</h2>
+<label>Content</label>
+<textarea id="content"></textarea>
 
-  <form action="https://staticman-3.herokuapp.com/v3/entry/github/akrajeshwar/easy-blog/master/posts" method="POST">
+<label>Author</label>
+<input type="text" id="author" />
 
-    <label>Your Name:</label><br>
-    <input type="text" name="fields.author" required><br><br>
+<button id="submitBtn">Submit Blog</button>
 
-    <label>Title:</label><br>
-    <input type="text" name="fields.title" required><br><br>
+<script type="module">
+  import { db, collection, addDoc } from "./firebase.js";
 
-    <label>Content:</label><br>
-    <textarea name="fields.content" rows="8" required></textarea><br><br>
+  const submitBtn = document.getElementById("submitBtn");
 
-    <button type="submit">Submit Blog</button>
-  </form>
+  submitBtn.addEventListener("click", async () => {
+    const title = document.getElementById("title").value;
+    const content = document.getElementById("content").value;
+    const author = document.getElementById("author").value;
+
+    await addDoc(collection(db, "blogs"), {
+      title,
+      content,
+      author,
+      timestamp: new Date()
+    });
+
+    alert("Blog submitted!");
+  });
+</script>
 
 </body>
 </html>
