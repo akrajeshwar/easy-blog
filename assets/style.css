@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 30px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #333;
+  color: white;
+  margin-right: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  background: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

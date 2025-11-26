@@ -1,0 +1,16 @@
+comments:
+  allowedFields: ["title", "content", "author"]
+  branch: "master"
+  commitMessage: "New blog post added"
+  filename: "{fields.title}"
+  format: "yaml"
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: "iso8601"
+  moderation: true
+  path: "posts"
+  requiredFields: ["title", "content", "author"]
+  transforms:
+    title: slugify
