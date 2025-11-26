@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Submit Blog</title>
+  <title>Easy Blog - Write Blog</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<h1>Write a Blog</h1>
+<div class="container">
+  <h1>Submit Your Blog</h1>
 
-<label>Title</label>
-<input type="text" id="title" />
+  <a class="btn" href="blog.html">View All Blogs</a>
 
-<label>Content</label>
-<textarea id="content"></textarea>
+  <h2>Write a Blog</h2>
 
-<label>Author</label>
-<input type="text" id="author" />
+  <label>Title</label>
+  <input id="title" type="text" placeholder="Enter blog title">
 
-<button id="submitBtn">Submit Blog</button>
+  <label>Content</label>
+  <textarea id="content" placeholder="Write your blog here..." rows="8"></textarea>
+
+  <label>Author</label>
+  <input id="author" type="text" placeholder="Your name">
+
+  <button id="submitBtn">Submit Blog</button>
+</div>
 
 <script type="module">
   import { db, collection, addDoc } from "./firebase.js";
 
-  const submitBtn = document.getElementById("submitBtn");
-
-  submitBtn.addEventListener("click", async () => {
+  document.getElementById("submitBtn").addEventListener("click", async () => {
     const title = document.getElementById("title").value;
     const content = document.getElementById("content").value;
     const author = document.getElementById("author").value;
+
+    if (!title || !content || !author) {
+      alert("Please fill all fields!");
+      return;
+    }
 
     await addDoc(collection(db, "blogs"), {
       title,
@@ -36,6 +46,7 @@
     });
 
     alert("Blog submitted!");
+    window.location.href = "blog.html";
   });
 </script>
 
