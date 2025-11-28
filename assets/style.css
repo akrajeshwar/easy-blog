@@ -1,111 +1,101 @@
-/* Global Background */
+/* Global background */
 body {
   font-family: 'Segoe UI', Roboto, sans-serif;
-  background: #F6F4F3; /* White Smoke */
+  background: #5BC0EB; /* Sky Surge */
   margin: 0;
   padding: 0;
-  color: #183059; /* Twilight Indigo */
+  color: #404E4D; /* Iron Grey text */
 }
 
-/* Navigation */
+/* Top Navigation (same layout, only colors updated) */
 .top-nav {
-  background: #183059;
+  background: #404E4D; /* Iron Grey */
   padding: 15px;
   display: flex;
   justify-content: center;
   gap: 20px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
 .top-nav a {
-  padding: 10px 18px;
-  background: #276FBF; /* Sapphire Sky */
-  color: white;
+  padding: 10px 20px;
+  background: #5BC0EB; /* Sky Surge */
+  color: #fff;
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: 0.3s ease;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 .top-nav a:hover {
-  background: #F03A47; /* Strawberry Red */
+  background: #C3423F; /* Tomato Jam */
 }
 
-/* Main Card Container */
+/* Main Card Container (same layout) */
 .container {
   width: 90%;
-  max-width: 780px;
+  max-width: 700px;
   margin: 40px auto;
-  background: white;
-  padding: 35px;
+  background: #F6F4F3; /* soft white */
+  padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 25px rgba(0,0,0,0.12);
+  box-shadow: 0 3px 18px rgba(0,0,0,0.15);
 }
 
-/* Headings */
-h1, h2 {
-  text-align: center;
-  color: #183059;
-  margin-top: 0;
-  font-weight: 700;
-}
-
-/* Form Inputs */
+/* Form inputs */
 input, textarea {
   width: 100%;
   padding: 14px;
   margin: 12px 0;
   border-radius: 8px;
-  border: 1px solid #AF5B5B; /* Terracotta Clay */
-  background: #F6F4F3;
+  border: 2px solid #9BC53D; /* Yellow Green */
+  background: #fff;
   font-size: 16px;
-  color: #183059;
+  color: #404E4D;
 }
 
 input:focus, textarea:focus {
-  border-color: #276FBF;
+  border-color: #5BC0EB;
   outline: none;
-  box-shadow: 0 0 6px rgba(39, 111, 191, 0.4);
+  box-shadow: 0 0 6px rgba(91,192,235,0.5);
 }
 
-/* Buttons */
+/* Button */
 button, .btn {
-  padding: 12px 22px;
-  font-size: 17px;
+  background: #9BC53D; /* Yellow Green */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  font-size: 18px;
   border-radius: 8px;
   cursor: pointer;
-  border: none;
-  background: #276FBF; /* Sapphire Sky */
-  color: white;
-  margin-top: 10px;
-  transition: 0.3s;
+  transition: 0.3s ease;
+  display: inline-block;
 }
 
 button:hover, .btn:hover {
-  background: #F03A47; /* Strawberry Red */
+  background: #C3423F; /* Tomato Jam */
 }
 
-/* Blog Card */
+/* Blog cards */
 .blog-card {
-  padding: 20px;
-  background: #ffffff;
-  border-left: 6px solid #276FBF;
+  background: #F6F4F3;
+  padding: 18px;
   margin: 20px 0;
   border-radius: 10px;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-  transition: 0.3s ease;
+  border-left: 6px solid #C3423F; /* Tomato Jam accent */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: 0.2s ease;
 }
 
 .blog-card:hover {
-  transform: translateY(-5px);
-  border-left-color: #F03A47;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transform: translateY(-4px);
+  border-left-color: #5BC0EB; /* Blue on hover */
 }
 
-/* Blog content area */
+/* Blog content */
 #post {
   white-space: pre-wrap;
-  color: #183059;
+  color: #404E4D;
   line-height: 1.7;
   font-size: 18px;
 }
