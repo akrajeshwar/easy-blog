@@ -1,77 +1,99 @@
+/* Background */
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f9;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: #BEC5AD; /* Ash Grey */
   margin: 0;
   padding: 0;
+  color: #34252F; /* Shadow Grey */
 }
 
+/* Main Content Container */
 .container {
   width: 90%;
-  max-width: 700px;
+  max-width: 750px;
   margin: 40px auto;
-  background: white;
+  background: #A4B494; /* Dry Sage */
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+  border-radius: 14px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+  backdrop-filter: blur(4px);
 }
 
+/* Headings */
 h1, h2 {
   text-align: center;
+  color: #3B5249; /* Granite */
+  margin-top: 0;
+  font-weight: 600;
 }
 
+/* Inputs + Textareas */
 input, textarea {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   margin: 10px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  border-radius: 10px;
+  border: 1px solid #3B5249;
   font-size: 16px;
+  background: #f3f5ef;
+  color: #34252F;
 }
 
-button {
-  width: 100%;
-  background: #4a4aff;
-  color: white;
-  padding: 12px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 18px;
+input:focus, textarea:focus {
+  border-color: #519872; /* Sea Green */
+  outline: none;
+  box-shadow: 0 0 8px rgba(81,152,114,0.4);
 }
 
-button:hover {
-  background: #2323ff;
-}
-
-.blog-card {
-  padding: 20px;
-  border: 1px solid #ddd;
-  margin: 15px 0;
-  border-radius: 8px;
-  background: #fafafa;
-}
-
-.blog-card h2 {
-  margin: 0;
-}
-
-a.btn {
+/* Buttons */
+button, .btn {
   display: inline-block;
-  margin: 10px 5px;
-  padding: 12px 18px;
-  background: #4a4aff;
+  width: auto;
+  padding: 12px 20px;
+  background: #519872; /* Sea Green */
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  font-size: 17px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  margin: 10px 0;
+  transition: 0.3s ease;
 }
 
-a.btn:hover {
-  background: #2323ff;
+button:hover,
+.btn:hover {
+  background: #3B5249; /* Granite */
 }
 
+/* Blog Cards */
+.blog-card {
+  padding: 20px;
+  background: #f0f3ea;
+  border-left: 6px solid #519872;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Post Page */
 #post {
   white-space: pre-wrap;
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 18px;
+  color: #34252F;
+}
+
+/* Navigation links */
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
 }
