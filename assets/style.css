@@ -1,101 +1,122 @@
-/* Global background */
+/* Global Background */
 body {
   font-family: 'Segoe UI', Roboto, sans-serif;
-  background: #5BC0EB; /* Sky Surge */
+  background: #E0E0E0; /* Alabaster Grey */
   margin: 0;
   padding: 0;
-  color: #404E4D; /* Iron Grey text */
+  color: #3A606E; /* Blue Slate */
 }
 
-/* Top Navigation (same layout, only colors updated) */
+/* Navigation Bar */
 .top-nav {
-  background: #404E4D; /* Iron Grey */
+  background: #3A606E; /* Blue Slate */
   padding: 15px;
   display: flex;
   justify-content: center;
   gap: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
 }
 
 .top-nav a {
   padding: 10px 20px;
-  background: #5BC0EB; /* Sky Surge */
+  background: #607B7D; /* Slate Grey */
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .top-nav a:hover {
-  background: #C3423F; /* Tomato Jam */
+  background: #828E82; /* Grey Olive */
 }
 
-/* Main Card Container (same layout) */
+/* Main Container */
 .container {
   width: 90%;
-  max-width: 700px;
-  margin: 40px auto;
-  background: #F6F4F3; /* soft white */
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 3px 18px rgba(0,0,0,0.15);
+  max-width: 750px;
+  margin: 45px auto;
+  background: #F9F9F9;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+  border-left: 6px solid #AAAE8E; /* Dry Sage accent */
 }
 
-/* Form inputs */
+/* Headings */
+h1, h2 {
+  text-align: center;
+  color: #3A606E;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+/* Inputs + Textareas */
 input, textarea {
   width: 100%;
   padding: 14px;
   margin: 12px 0;
   border-radius: 8px;
-  border: 2px solid #9BC53D; /* Yellow Green */
-  background: #fff;
+  border: 2px solid #AAAE8E; /* Dry Sage */
+  background: #ffffff;
   font-size: 16px;
-  color: #404E4D;
+  color: #3A606E;
 }
 
 input:focus, textarea:focus {
-  border-color: #5BC0EB;
+  border-color: #607B7D; /* Slate Grey */
   outline: none;
-  box-shadow: 0 0 6px rgba(91,192,235,0.5);
+  box-shadow: 0 0 6px rgba(96, 123, 125, 0.5);
 }
 
-/* Button */
+/* Buttons */
 button, .btn {
-  background: #9BC53D; /* Yellow Green */
+  padding: 12px 22px;
+  background: #607B7D; /* Slate Grey */
   color: white;
-  padding: 12px 20px;
   border: none;
-  font-size: 18px;
+  font-size: 17px;
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s ease;
-  display: inline-block;
 }
 
 button:hover, .btn:hover {
-  background: #C3423F; /* Tomato Jam */
+  background: #828E82; /* Grey Olive */
 }
 
-/* Blog cards */
+/* Blog Card */
 .blog-card {
-  background: #F6F4F3;
-  padding: 18px;
+  background: #ffffff;
+  padding: 20px;
+  border-left: 6px solid #3A606E; /* Blue Slate */
   margin: 20px 0;
-  border-radius: 10px;
-  border-left: 6px solid #C3423F; /* Tomato Jam accent */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: 0.2s ease;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  transition: 0.3s ease;
 }
 
 .blog-card:hover {
-  transform: translateY(-4px);
-  border-left-color: #5BC0EB; /* Blue on hover */
+  transform: translateY(-5px);
+  border-left-color: #607B7D; /* Slate Grey on hover */
 }
 
-/* Blog content */
+/* Blog post page text */
 #post {
   white-space: pre-wrap;
-  color: #404E4D;
   line-height: 1.7;
   font-size: 18px;
+  color: #3A606E;
+}
+/* Fix input alignment + spacing */
+input, textarea {
+  width: 100%;
+  box-sizing: border-box;      /* prevents overflow */
+  padding: 14px;
+  margin: 12px 0;
+  border-radius: 8px;
+  border: 2px solid #AAAE8E;
+  background: #ffffff;
+  font-size: 16px;
+  color: #3A606E;
 }
