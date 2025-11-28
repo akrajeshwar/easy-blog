@@ -120,3 +120,27 @@ input, textarea {
   font-size: 16px;
   color: #3A606E;
 }
+/* Footer Section */
+.site-footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 10px;
+  background: #3A606E; /* Blue Slate */
+  color: #E0E0E0;      /* Alabaster Grey */
+  font-size: 16px;
+  border-top: 4px solid #AAAE8E; /* Dry Sage */
+  animation: fadeIn 1.2s ease;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.site-footer p {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
